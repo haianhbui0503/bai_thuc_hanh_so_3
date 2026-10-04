@@ -1,0 +1,185 @@
+#Bai 1
+danh_sach_1 = [1,2,3,4,5,6,8,94,1,2,3]
+dem = 0
+for i in danh_sach_1:
+  dem += i
+print("Tổng:", dem)
+
+#Bai 2
+danh_sach_2 = ['hello', 'hi', 'world', 'hello', 'haha']
+for i in set(danh_sach_2):
+  dem = danh_sach.count(i)
+  print(i,'xuất hiện', dem, 'lần')
+
+#Bai3
+danh_sach_3 = [1,2,3,4,5,6,7,8,9,4,5,6,7,8,98,54]
+print("Số lớn nhất trong danh sách:", max(set(danh_sach_3)))
+
+#Bai4
+danh_sach_4 = ('hello','sample','world',1,2,3)
+x = input("Nhập từ bàn phím:")
+if str(x) in danh_sach_4:
+  print(f"{x} nằm trong tuple")
+elif int(x) in danh_sach_4:
+  print(f"{x} nằm trong tuple")
+else:
+  print(f"{x} không nằm trong tuple")
+
+#Bai 5
+danh_sach_5 = ['hello', 'hi', 'world', 'hello', 'haha', 'hi']
+print(set(danh_sach_5))
+
+#Bai6
+danh_sach_6_1 = ['hello', 'hi', 'world', 'hello', 'haha', 'hi']
+danh_sach_6_2 = []
+for i in range (1,len(danh_sach_6_1)+1):
+  danh_sach_6_2.append(danh_sach_6_1[-i])
+print(danh_sach_6_2)
+
+#Bai 7
+danh_sach_7_1 = ('hello','sample','world',1,2,3)
+danh_sach_7_2 = ('hello','sample','world',1,2,4)
+print(danh_sach_7_1 + danh_sach_7_2)
+
+#Bai 8
+thu_vien_8 = {}
+for i in range (3):
+  key = input(f"Nhập key thứ {i+1}: ")
+  value = int(input(f"Nhập value của key thứ {i+1}: "))
+  thu_vien_8[key] = value  
+print(thu_vien_8)
+
+#Bai 9(chua lam duoc)
+danh_sach_9_1 = [1,2,3,4,5,6,7,8,8,2,3,4,2,4,6,9]
+danh_sach_9_2 = []
+for x in danh_sach_9_1:
+  if x not in danh_sach_9_2:
+    danh_sach_9_2.append(x)
+print(danh_sach_9_2)
+
+
+#Bai 10
+danh_sach_10_1 = [1,2,3,4,5,6,7,8,8,2,3,4,2,4,6,9]
+dem = 0
+x = None
+for i in danh_sach_10_1:
+  dem_1 = danh_sach_10_1.count(i)
+  if dem_1 > dem:
+    dem = dem_1
+    x = i
+print(f"Phần tử {x} xuất hiện nhiều nhất với {dem} lần")
+
+# Bai 11
+thu_vien_11_1 = {'a': 10, 'b': 20, 'c': 30}
+thu_vien_11_2 = {'b': 15, 'c': 5, 'd': 40}
+lam_lai = thu_vien_11_1.copy()
+for key, value in thu_vien_11_2.items():
+    if key in lam_lai:
+        lam_lai[key] += value
+    else:
+        lam_lai[key] = value
+print("Câu 11:", lam_lai)
+
+# Bai 12
+s = input("Nhập một chuỗi: ")
+dem = {}
+for x in s:
+    if char in dem:
+        dem[x] += 1
+    else:
+        dem[x] = 1
+print(f"Số lần kí tự {x} xuất hiện", dem)
+
+# Bai 13
+danh_sach_13_1 = set(map(int, input("Nhập set 1: ").split()))
+danh_sach_13_2 = set(map(int, input("Nhập set 2: ").split()))
+print("Giao hai set:", danh_sach_13_1 & danh_sach_13_2)
+print("Hợp hai set:", danh_sach_13_1 | danh_sach_13_2)
+print("Hiệu hai set:", danh_sach_13_1 - danh_sach_13_2)
+
+# Bai 14
+danh_sach_14 = [(1, 2), (3, 4), (5, 6)]
+tong_x = 0
+tong_y = 0
+for x, y in danh_sach_14:
+    tong_x += x
+    tong_y += y
+n = len(danh_sach_14)
+print(f"Câu 14: Trung bình x = {tong_x / n}, TB y = {tong_y / n}")
+
+# Bai 15
+danh_sach_15 = [5, 12, 8, 20, 15, 14, 3]
+danh_sach_15_moi = []
+for i in danh_sach_15:
+    if i > 10 and i % 2 == 0:
+        danh_sach_15_moi.append(i)
+print("Danh sách mới chứa các số lớn hơn 10:", danh_sach_15_moi)
+
+# Bai 16
+thu_vien_16 = {"An": 8.5, "Bình": 9.0, "Cường": 6.5, "Dũng": 9.5}
+sap_xep = sorted(thu_vien_16.items(), key=lambda x: x[1], reverse=True)
+print("Câu 16:")
+for name, score in sap_xep:
+    print(f"Đã sắp xếp: {name}: {score}")
+
+# Bai 17
+data = [
+    {"name": "A", "score": 7},
+    {"name": "B", "score": 9},
+    {"name": "A", "score": 8}
+]
+summary = {}
+for item in data:
+    name = item["name"]
+    score = item["score"]
+    if name in summary:
+        summary[name].append(score)
+    else:
+        summary[name] = [score]
+print("Tổng điểm theo tên:")
+for name, score_list in summary.items():
+    print(f"{name}: {score_list}")
+
+# Bai 18
+san_pham = [("SKU1", 10), ("SKU2", 5), ("SKU1", 20), ("SKU3", 15)]
+sku_dict = {}
+for sku, quantity in san_pham:
+    if sku in sku_dict:
+        sku_dict[sku] += quantity
+    else:
+        sku_dict[sku] = quantity
+result18 = list(sku_dict.items())
+print("Câu 18:", result18)
+
+# Bai 19
+lst = [10, 22, 28, 29, 30, 40]
+N = int(input("Nhập một số nguyên N: "))
+thoan_man = None
+gan_nhat = float('inf')
+for i in range(len(lst)):
+    for j in range(i + 1, len(lst)):
+        tong = lst[i] + lst[j]
+        diff = abs(tong - N)
+        if diff < gan_nhat:
+            gan_nhat = diff
+            thoa_man = (lst[i], lst[j])
+print("Cặp phần tử có tổng gần nhất với N:", thoa_man)
+
+# Bai 20
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+cheo_chinh = 0
+cheo_phu = 0
+n = len(matrix)
+for i in range(n):
+    cheo_chinh += matrix[i][i]
+    cheo_phu += matrix[i][n - 1 - i]
+ma_tran_moi = tuple(tuple(row) for row in matrix)
+
+print("Câu 20:")
+print("- Tổng đường chéo chính:", cheo_chinh)
+print("- Tổng đường chéo phụ:", cheo_phu)
+print("- Ma trận dạng tuple of tuple:", ma_tran_moi)
